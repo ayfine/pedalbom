@@ -1,0 +1,109 @@
+@page {
+  size: 3in 5in;
+  margin: 0.1in;
+}
+@media print {
+  *,
+  *:before,
+  *:after {
+    font-size: unset !important;
+    font-family: unset !important;
+    line-height: unset;
+  }
+  html {
+    border: 1px solid black;
+    padding: 10px;
+  }
+  html body {
+    width: 100% !important;
+    font-size: 5pt !important;
+    font-family: 'Helvetica' !important;
+    line-height: unset;
+    max-width: initial;
+    margin: 0;
+  }
+  html body .wrapper {
+    grid-gap: 0;
+  }
+  html body .wrapper .details-container {
+    border: 0px;
+    border-radius: 0px;
+  }
+  html body .wrapper .details-container .details {
+    border: 0px;
+    border-radius: 0px;
+    grid-gap: 0;
+    grid-template-columns: 1fr 1fr;
+  }
+  html body .wrapper .details-container .details .caption,
+  html body .wrapper .details-container .details .value {
+    padding: 0pt;
+    border: 0px;
+  }
+  html body .wrapper .details-container .caption {
+    padding: 0pt;
+    border: 0px;
+    border-radius: 0px;
+    text-align: right;
+    margin-right: 5pt;
+  }
+  html body .wrapper .details-container .caption.pedal-name {
+    display: none;
+  }
+  html body .wrapper .details-container .value {
+    padding: 0pt;
+    border: 0px;
+    border-radius: 0px;
+    margin-left: 5pt;
+  }
+  html body .wrapper .details-container .value.pedal-name {
+    grid-column: span 2;
+    font-weight: 900;
+    font-size: 8pt;
+    text-align: center;
+    padding: 3pt;
+  }
+  html body .wrapper .type-out {
+    padding: 0;
+    border: 0px;
+    border-radius: 0;
+    border-bottom: 1px solid #bbb;
+    margin: 0;
+  }
+  html body .wrapper .type-out h2,
+  html body .wrapper .type-out h3 {
+    margin: 2px auto !important;
+  }
+  html body .wrapper .type-out h3 {
+    margin: 0pt auto;
+  }
+  html body .wrapper .type-out:last-of-type {
+    border-bottom: 0px;
+  }
+  html body .wrapper .type-out .count ul {
+    column-count: 4;
+  }
+  html body .wrapper .type-out .vals .components {
+    column-count: 4;
+  }
+  html body .wrapper .type-out .vals .components li .val-outer {
+    padding: 0 !important;
+    display: inline !important;
+    line-height: unset !important;
+  }
+  html body .wrapper .type-out .vals .components li .val-outer .namep {
+    vertical-align: baseline;
+    font-size: inherit;
+  }
+  html body .wrapper .type-out .vals .electromechanical {
+    column-count: 3;
+  }
+  html body.list-checkboxes .count ul li:before,
+  html body.list-checkboxes .vals ul li:before {
+    margin-right: 3px;
+    vertical-align: baseline;
+  }
+  html.header-checkboxes .type-out h2:before {
+    vertical-align: baseline;
+  }
+}

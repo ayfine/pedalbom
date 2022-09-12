@@ -1,0 +1,91 @@
+// out: usletter.css
+
+
+@page {
+	size:8.5in 11in;
+	margin:.5in;
+}
+
+@media print {
+html {
+	body {
+	width:100% !important;
+	font-size:10pt;
+	line-height:1.1;
+	max-width:initial;
+	margin:0;
+		.wrapper {
+			grid-gap:2pt;
+			.details-container {
+			border:0px;
+			border-radius:0px;
+				.details {
+				border:0px;
+				border-radius:0px;
+				grid-gap:2pt;
+				grid-template-columns:.25fr .75fr;
+					.caption, .value {
+						padding:1pt;
+						border:0px;
+					}
+					.value {
+						font-size:12pt;
+						}
+					}
+					.caption {
+					padding:1pt;
+					border:0px;
+					border-radius:0px;
+					}
+					.value {
+					padding:1pt;
+					border:0px;
+					border-radius:0px;
+					font-size:12pt;
+						&.controls, &.notes {
+						}
+					}
+				}
+			.type-out {
+				h2, h3 {
+					margin:5pt auto;
+				}
+				h3 {
+					margin:3pt auto;
+				}
+				padding:0;
+				border:0px;
+				border-radius:0;
+				border-bottom:1px solid #bbb;
+				&:last-of-type {
+					border-bottom:0px;
+				}
+				.count {
+					ul {
+						column-count: 4;
+					} // count ul
+				} // count
+				.vals {
+					.components {
+						column-count: 4;
+					}
+					.electromechanical {
+						column-count:3;
+					}
+				} // vals
+			} // type-out
+		} // wrapper end
+		&.list-checkboxes {
+			.count ul,
+			.vals ul {
+				li {
+					}
+				}
+			}
+		}
+		&.header-checkboxes {
+			.type-out h2 {
+				}
+			}
+	}
+}

@@ -1,0 +1,116 @@
+@import "normalize.css";
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+  background-color: #fff;
+}
+html body {
+  font-size: 1.6rem;
+  width: 95%;
+  max-width: 1020px;
+  margin: 2rem auto;
+  font-family: 'Inconsolata', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-variant-numeric: lining-nums tabular-nums;
+}
+html body .wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 1rem;
+}
+html body .wrapper .details-container {
+  border: 1px solid #ccc;
+  border-radius: 2px;
+}
+html body .wrapper .details-container .details {
+  display: grid;
+  grid-template-columns: 0.5fr 1fr;
+  grid-gap: 1rem;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+}
+html body .wrapper .details-container .details:last-of-type {
+  border-bottom: 0px;
+}
+html body .wrapper .details-container .details .caption {
+  padding: 1rem;
+  border-right: 1px solid #ccc;
+  font-size: 1.4rem;
+}
+html body .wrapper .details-container .details .value {
+  padding: 1rem;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+html body .wrapper .details-container .details .value.controls,
+html body .wrapper .details-container .details .value.notes {
+  font-size: 1.6rem;
+  font-weight: normal;
+}
+html body .wrapper .type-out {
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  padding: 1.8rem;
+}
+html body .wrapper .type-out h2,
+html body .wrapper .type-out h3 {
+  font-family: 'Inconsolata', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  margin: 1.5rem auto;
+}
+html body .wrapper .type-out h3 {
+  margin: 1.25rem auto;
+}
+html body .wrapper .type-out .count ul {
+  column-count: 2;
+  list-style: circle;
+}
+@media only screen and (min-width: 720px) {
+  html body .wrapper .type-out .count ul {
+    column-count: 3;
+  }
+}
+html body .wrapper .type-out .vals .components {
+  column-count: 2;
+  list-style: circle;
+}
+@media only screen and (min-width: 720px) {
+  html body .wrapper .type-out .vals .components {
+    column-count: 3;
+  }
+}
+html body .wrapper .type-out .vals .components li .value-outer .namep {
+  font-size: 1.4rem;
+  letter-spacing: 0.5px;
+  font-weight: bold;
+  vertical-align: middle;
+}
+html body .wrapper .type-out .vals .electromechanical {
+  column-count: 2;
+}
+@media only screen and (min-width: 720px) {
+  html body .wrapper .type-out .vals .electromechanical {
+    column-count: 3;
+  }
+}
+html body.list-checkboxes .count ul,
+html body.list-checkboxes .vals ul {
+  list-style: none !important;
+  padding: 0;
+}
+html body.list-checkboxes .count ul li:before,
+html body.list-checkboxes .vals ul li:before {
+  content: "\2610";
+  vertical-align: middle;
+  margin-right: 1rem;
+  line-height: 0.9em;
+}
+html body.header-checkboxes .type-out h2:before {
+  content: "\2610";
+  font-family: 'Inconsolata';
+  margin-right: 1rem;
+  vertical-align: middle;
+  line-height: 0.85em;
+}

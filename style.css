@@ -1,0 +1,264 @@
+@import "normalize.css";
+@font-face {
+  font-family: 'Inconsolata';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: normal;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/inconsolata/v30/QldgNThLqRwH-OJ1UHjlKENVzkWGVkL3GZQmAwLYxYWI2qfdm7Lpp4U8aRo.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Inconsolata';
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: normal;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/inconsolata/v30/QldgNThLqRwH-OJ1UHjlKENVzkWGVkL3GZQmAwLYxYWI2qfdm7Lpp2I7aRo.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Karla';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/karla/v22/qkBKXvYC6trAT7RQNNK2EG7SIwPWMNlCV0lP.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Karla';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/karla/v22/qkBIXvYC6trAT55ZBi1ueQVIjQTD-JqqFA.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Karla';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/karla/v22/qkBIXvYC6trAT55ZBi1ueQVIjQTDH52qFA.ttf) format('truetype');
+}
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+html {
+  margin: 0;
+  font-family: 'Karla', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 62.5%;
+}
+html body {
+  width: 98%;
+  max-width: 1200px;
+  margin: 1rem auto 2rem auto;
+  font-size: 1.6rem;
+  line-height: 1.4;
+  color: hsl(0, 0%, 1%);
+}
+html body p {
+  margin: 0.85rem 0;
+}
+html body h1,
+html body h2,
+html body h3,
+html body h4,
+html body h5,
+html body fieldset legend {
+  font-family: 'Inconsolata', Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
+}
+html body a {
+  color: #F53D39;
+  text-decoration: underline;
+  text-decoration-color: #ccc;
+  transition: 0.2s;
+  font-weight: bold;
+  font-family: 'Inconsolata', Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
+}
+html body a:hover {
+  color: hsl(0, 0%, 40%);
+}
+@media only screen and (min-width: 820px) {
+  html body .wrapper {
+    grid-template-columns: 0.35fr 1fr;
+    grid-gap: 1rem;
+    display: grid;
+  }
+}
+html body .wrapper h1 {
+  text-align: left;
+  font-size: 2.75em;
+}
+@media only screen and (min-width: 820px) {
+  html body .wrapper h1 {
+    grid-column: span 2;
+  }
+}
+html body .caption {
+  font-style: italic;
+}
+html body .caption-2 {
+  background-color: #eee;
+  padding: 3px;
+  display: inline-block;
+}
+html body .combine-caption {
+  padding: 5px;
+  font-size: 0.85em;
+  font-family: 'Inconsolata', Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
+}
+html body .bold {
+  font-weight: bold;
+}
+html body input::-webkit-calendar-picker-indicator {
+  opacity: 100;
+}
+html body #form fieldset {
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  margin-top: 10px;
+  padding: 2rem;
+}
+html body #form fieldset:focus-within {
+  border: 1px solid #a6a6a6;
+  transition: 0.2s linear;
+}
+html body #form fieldset legend {
+  background-color: black;
+  color: #fff;
+  padding: 1rem 1.2rem;
+  border-radius: 1px;
+  font-weight: bold;
+  font-size: 2.1rem;
+}
+html body #form .form-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 0.65fr 1fr;
+  grid-gap: 1rem;
+}
+html body #form .g-center {
+  align-self: center;
+}
+html body #form .grid-2 {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 0.5rem;
+}
+html body #form .full {
+  width: 100%;
+}
+html body #form label.disabled {
+  color: #ccc;
+}
+html body #form label.hilight-color {
+  background-image: linear-gradient(45deg, #5086f7, #e1412f);
+}
+html body #form label.hilight-grayscale {
+  background-image: linear-gradient(35deg, #111, #555);
+}
+html body #form label.hilight-grayscale,
+html body #form label.hilight-color {
+  margin-top: 2.5rem;
+  color: white;
+  padding: 8px;
+  display: inline-block;
+  border-radius: 2px;
+}
+html body #form .larger {
+  vertical-align: middle;
+}
+html body #form hr {
+  border: 0px;
+  border-bottom: 1px solid #ccc;
+}
+html body #form input,
+html body #form textarea,
+html body #form select,
+html body #form option,
+html body #form button#generate {
+  font-family: 'Inconsolata', Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
+  font-size: inherit;
+  border-radius: 3px;
+  outline: none;
+  box-shadow: none;
+  border: 1px solid #999;
+  padding: 9px;
+}
+html body #form input:active,
+html body #form textarea:active,
+html body #form select:active,
+html body #form option:active,
+html body #form button#generate:active,
+html body #form input:focus,
+html body #form textarea:focus,
+html body #form select:focus,
+html body #form option:focus,
+html body #form button#generate:focus {
+  outline: none;
+  box-shadow: none;
+}
+html body #form input:active,
+html body #form textarea:active,
+html body #form select:active,
+html body #form option:active,
+html body #form button#generate:active,
+html body #form input:focus,
+html body #form textarea:focus,
+html body #form select:focus,
+html body #form option:focus,
+html body #form button#generate:focus {
+  border: 1px solid #000;
+  transition: 0.2s linear;
+}
+html body #form textarea {
+  display: block;
+  width: 100%;
+}
+html body #form input[type=submit],
+html body #form button#generate {
+  font-family: 'Karla', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-weight: bold;
+  font-size: 1.25em;
+  margin-top: 18px;
+  margin-bottom: 6px;
+  padding: 1em;
+  background-color: #000;
+  color: #fff;
+}
+.col-1 {
+  grid-column: span 1;
+}
+.col-2 {
+  grid-column: span 2;
+}
+.col-1,
+.col-2 {
+  padding-bottom: 0.5rem;
+}
+.accent {
+  background-color: #F53D39;
+  color: white;
+}
+.accent2 {
+  background-color: #275FF8;
+  color: white;
+  border-radius: 3px;
+}
+.fcenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.bottom-border {
+  border-bottom: 2px solid #ccc;
+}
+.col-1,
+.col-2 {
+  justify-content: center;
+  align-content: center;
+}
+.top-margin {
+  margin-top: 2rem;
+}

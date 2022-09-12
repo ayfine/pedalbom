@@ -1,0 +1,181 @@
+/* Alex Fine's Less Mixins
+
+Reminder:
+Divide 1) aesthetics and 2) layout
+
+
+Table of Contents
+0. Debug Class
+1. Typography
+1.1 Font Stacks
+1.2 Misc
+2. Animations
+3. Gradients
+4. CSS Grid
+5. Elements
+6. Responsive & Breakpoints
+*/
+
+/* 0. Debug Class */
+
+.debug() {
+  background-color:red;
+  border:2px solid yellow;
+  &:hover {
+    background-color:blue;
+  }
+}
+
+/* 1. Typography */
+
+/* 1.1 Font stacks */
+
+/* These can all be called as .mixin-name[font-family] when being used as fallbacks, which although is LESS standard, I often have to remind myself. */
+/* Sourced from CSS Tricks */
+
+.times_stack() {
+  font-family: Cambria, "Hoefler Text", Utopia, "Liberation Serif", "Nimbus Roman No9 L Regular", Times, "Times New Roman", serif;
+}
+
+.georgia_stack() {
+  font-family: Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
+}
+
+.garamond_stack() {
+  font-family: "Palatino Linotype", Palatino, Palladio, "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style", "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond", "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L", Georgia, serif;
+}
+
+.grotesk_stack() {
+font-family: Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+}
+
+.monospace_stack() {
+  font-family: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
+}
+
+.systemsans_stack() {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+.fontface(@name, @weight, @style, @path, @var-numeric: normal, @ligs: normal) {
+
+	@font-face {
+		font-family: @name;
+		src:
+			local('@{name}'),
+			url('@{path}.eot'),
+			url('@{path}.eot?#iefix') format('embedded-opentype'),
+			url('@{path}.woff') format('woff'),
+			url('@{path}.woff2') format('woff2'),
+			url('@{path}.ttf') format('truetype');
+	}
+	font-weight: @weight;
+	font-style: @style;
+	font-variant-numeric: @var-numeric;
+	font-variant-ligatures: @ligs;
+
+}
+
+/* 1.2 Misc */
+
+.antialias() {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.no-kern {
+  font-kerning: none;
+}
+
+.hyphenate() {
+  hyphens: auto
+}
+
+/* 2. Animations */
+
+.fade(@s) {
+  transition:@s linear;
+}
+
+/* 3. Gradients */
+
+.bevel-corners(@color, @size: 8px) {
+  background: @color;
+  background: linear-gradient(135deg, transparent @size, @color 0) top left, linear-gradient(225deg, transparent @size, @color 0) top right, linear-gradient(315deg, transparent @size, @color 0) bottom right, linear-gradient(45deg, transparent @size, @color 0) bottom left;
+  background-size: 50% 50%;
+  background-repeat: no-repeat;
+}
+
+.gradient (@startColor: #eee, @endColor: white) {
+	background-color: @startColor;
+	background: linear-gradient(top, @startColor, @endColor);
+}
+.horiz-gradient (@startColor: #eee, @endColor: white) {
+ 	background-color: @startColor;
+	background-image: linear-gradient(left, @startColor, @endColor);
+}
+
+.gradient-direction (@startColor: #555, @endColor: #333, @degrees: 45) {
+  background-image: linear-gradient(~"@{degrees}deg", @startColor, @endColor);
+}
+
+/* 4. CSS Grid */
+
+.generate-columns(@n) {
+  each(range(@n){
+    .col-@{value} {
+      grid-column: span @value;
+    }
+  });
+}
+
+.generate-rows(@n) {
+  each(range(@n) {
+    .row-@{value} {
+      grid-row: span @value;
+    }
+  }
+  );
+}
+
+// 5. Elements
+
+.flex_center() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 6. Responsive and Breakpoints */
+
+/* Variable Method: @media @desktop { rules ... } */
+/* Sourced form https://stackoverflow.com/a/20062582 */
+
+@desktoplarge:   ~"only screen and (min-width: 1120px)";
+@desktop:   ~"only screen and (min-width: 960px)";
+@tablet:    ~"only screen and (min-width: 720px) and (max-width: 959px)";
+@tabletanddesktop: ~"only screen and (min-width: 720px)";
+@mobile: ~"only screen and (max-width: 719px)";
+
+/* Mixin Method: .tablet({ rules ..}) */
+/* Sourced from https://www.iambacon.co.uk/blog/life-is-now-easier-create-media-query-mixins-with-rulesets-less-css */
+
+.tablet(@rules) {
+  @media only screen and (min-width: 720px) and (max-width: 959px) {
+    @rules();
+  }
+}
+
+.desktop(@rules) {
+  @media only screen and (min-width: 820px) {
+    @rules();
+  }
+}
+
+.g(@b) {
+	background-color:hsl(0,0,@b%);
+}
+.gt(@b) {
+	color:hsl(0,0,@b);
+}

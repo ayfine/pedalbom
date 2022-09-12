@@ -1,0 +1,171 @@
+@import (reference) "mixins.less";
+@import "normalize.css";
+
+@square: "\2610";
+@font: 'Inconsolata';
+@font-headers: @font;
+
+*, *::after, *::before {
+	box-sizing:border-box;
+}
+
+
+html {
+
+	font-size:62.5%;
+	background-color:#fff;
+
+	body {
+
+		font-size:1.6rem;
+		width:95%;
+		max-width:1020px;
+		margin:2rem auto;
+		font-family:@font, .systemsans_stack[font-family];
+		font-variant-numeric: lining-nums tabular-nums;
+
+		.wrapper {
+
+			display:grid;
+			grid-template-columns:1fr;
+			grid-gap:1rem;
+
+			.details-container {
+
+				border:1px solid #ccc;
+				border-radius:2px;
+
+				.details {
+
+					display:grid;
+					grid-template-columns:.5fr 1fr;
+					grid-gap:1rem;
+
+					align-items: center;
+					border-bottom:1px solid #ccc;
+					&:last-of-type {
+						border-bottom:0px;
+					}
+
+					.caption {
+						padding:1rem;
+						border-right:1px solid #ccc;
+						font-size:1.4rem;
+
+					}
+
+					.value {
+						padding:1rem;
+						font-size:1.8rem;
+						font-weight:bold;
+						&.controls, &.notes {
+							font-size:1.6rem;
+							font-weight:normal;
+						}
+					}
+				}
+
+			} // details-container
+
+			.type-out {
+
+				border:1px solid #ccc;
+				border-radius:2px;
+				padding:1.8rem;
+
+				h2, h3 {
+					font-family:@font-headers, .systemsans_stack[font-family];
+					margin:1.5rem auto;
+				}
+
+
+				h3 {
+					margin:1.25rem auto;
+				}
+
+				.count {
+					ul {
+						column-count:2;
+						@media @tabletanddesktop {
+							column-count:3;
+						}
+						list-style:circle;
+						.count-item {
+
+							.count-val {
+
+							}
+							.count-n {
+
+							}
+
+						}
+					} // count ul
+				} // count
+
+				.vals {
+					.components {
+					column-count:2;
+					@media @tabletanddesktop {
+						column-count:3;
+					}
+					list-style:circle;
+						li {
+							.value-outer {
+
+								.namep {
+									font-size:1.4rem;
+									letter-spacing:.5px;
+									font-weight:bold;
+									vertical-align: middle;
+								}
+
+								.comp-val {
+
+								}
+
+							}
+						}
+					}
+					.electromechanical {
+						column-count:2;
+						@media @tabletanddesktop {
+							column-count:3;
+						}
+					}
+				} // vals
+
+			} // type-out
+
+		} // wrapper end
+
+		&.list-checkboxes {
+			.count ul,
+			.vals ul {
+				list-style:none !important;
+				padding:0;
+				li {
+					&:before {
+						content: @square;
+						vertical-align: middle;
+						margin-right:1rem;
+						line-height:.9em;
+					}
+				}
+			}
+		}
+		&.header-checkboxes {
+			.type-out h2 {
+				&:before {
+					content: @square;
+					font-family:@font;
+					margin-right:1rem;
+					vertical-align: middle;
+					line-height:.85em;
+				}
+			}
+		}
+
+	} //body end
+
+} // html end

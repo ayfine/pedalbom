@@ -1,0 +1,70 @@
+@page {
+  size: 8.5in 11in;
+  margin: 0.5in;
+}
+@media print {
+  html body {
+    width: 100% !important;
+    font-size: 10pt;
+    line-height: 1.1;
+    max-width: initial;
+    margin: 0;
+  }
+  html body .wrapper {
+    grid-gap: 2pt;
+  }
+  html body .wrapper .details-container {
+    border: 0px;
+    border-radius: 0px;
+  }
+  html body .wrapper .details-container .details {
+    border: 0px;
+    border-radius: 0px;
+    grid-gap: 2pt;
+    grid-template-columns: 0.25fr 0.75fr;
+  }
+  html body .wrapper .details-container .details .caption,
+  html body .wrapper .details-container .details .value {
+    padding: 1pt;
+    border: 0px;
+  }
+  html body .wrapper .details-container .details .value {
+    font-size: 12pt;
+  }
+  html body .wrapper .details-container .caption {
+    padding: 1pt;
+    border: 0px;
+    border-radius: 0px;
+  }
+  html body .wrapper .details-container .value {
+    padding: 1pt;
+    border: 0px;
+    border-radius: 0px;
+    font-size: 12pt;
+  }
+  html body .wrapper .type-out {
+    padding: 0;
+    border: 0px;
+    border-radius: 0;
+    border-bottom: 1px solid #bbb;
+  }
+  html body .wrapper .type-out h2,
+  html body .wrapper .type-out h3 {
+    margin: 5pt auto;
+  }
+  html body .wrapper .type-out h3 {
+    margin: 3pt auto;
+  }
+  html body .wrapper .type-out:last-of-type {
+    border-bottom: 0px;
+  }
+  html body .wrapper .type-out .count ul {
+    column-count: 4;
+  }
+  html body .wrapper .type-out .vals .components {
+    column-count: 4;
+  }
+  html body .wrapper .type-out .vals .electromechanical {
+    column-count: 3;
+  }
+}
